@@ -1,0 +1,10 @@
+from bs4 import BeautifulSoup
+import requests
+import pandas as pd
+url="https://quotes.toscrape.com"
+res=requests.get(url)
+soup=BeautifulSoup(res.content, 'html.parser')
+
+debil=soup.find_all('span', class_='text')
+print(debil)
+
